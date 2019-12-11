@@ -5,12 +5,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import com.alcntml.myapplication.R
 import com.alcntml.myapplication.util.TrayHelper
-import com.alcntml.myapplication.util.TrayModel
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.bottom_sheet1.*
 
 public class BottomSheetFragment1 : Fragment() {
