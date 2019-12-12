@@ -1,15 +1,15 @@
 [
     {
-        "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_action_access_time.png.flat",
-        "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/src/main/res/mipmap-mdpi/ic_action_access_time.png"
+        "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
         "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_action_access_time.png.flat",
+        "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/src/main/res/mipmap-mdpi/ic_action_access_time.png"
     },
     {
         "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
@@ -44,6 +44,10 @@
         "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_launcher_background.png"
     },
     {
+        "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/layout_mva_bottom_snackbar_component.xml.flat",
+        "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/src/main/res/layout/mva_bottom_snackbar_component.xml"
+    },
+    {
         "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_action_local_phone.png.flat",
         "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/src/main/res/mipmap-xhdpi/ic_action_local_phone.png"
     },
@@ -54,6 +58,10 @@
     {
         "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_action_access_time.png.flat",
         "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/src/main/res/mipmap-xxhdpi/ic_action_access_time.png"
+    },
+    {
+        "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/layout_mva_top_snackbar_component.xml.flat",
+        "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/src/main/res/layout/mva_top_snackbar_component.xml"
     },
     {
         "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
@@ -132,12 +140,12 @@
         "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/src/main/res/mipmap-xxxhdpi/ic_action_location_on.png"
     },
     {
-        "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_launcher_background.png.flat",
-        "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/generated/res/pngs/debug/drawable-mdpi/ic_launcher_background.png"
+        "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/drawable_mva_snackbar_top_bg.xml.flat",
+        "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/src/main/res/drawable/mva_snackbar_top_bg.xml"
     },
     {
-        "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/layout_mva10_bottom_navigation.xml.flat",
-        "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/src/main/res/layout/mva10_bottom_navigation.xml"
+        "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_launcher_background.png.flat",
+        "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/generated/res/pngs/debug/drawable-mdpi/ic_launcher_background.png"
     },
     {
         "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
@@ -152,8 +160,16 @@
         "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_launcher_background.xml"
     },
     {
+        "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/layout_mva_bottom_navigation.xml.flat",
+        "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/src/main/res/layout/mva_bottom_navigation.xml"
+    },
+    {
         "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_launcher_background.png.flat",
         "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/drawable_mva_snackbar_bottom_bg.xml.flat",
+        "source": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/src/main/res/drawable/mva_snackbar_bottom_bg.xml"
     },
     {
         "merged": "/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",

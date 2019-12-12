@@ -16,12 +16,18 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="@color/color_text"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />
+
+    <com.alcntml.myapplication.component.snackbar.MvaTopSnackbarComponent
+        android:id="@+id/mvaTopSnackbarComp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize" />
 
     <com.alcntml.myapplication.component.TrayNavigationComponent
         android:id="@+id/trayNavComp"
@@ -29,4 +35,11 @@
         android:layout_height="match_parent"
         android:layout_marginTop="?attr/actionBarSize"
         android:layout_gravity="bottom"/>
+
+    <com.alcntml.myapplication.component.snackbar.MvaBottomSnackbarComponent
+        android:id="@+id/mvaBottomSnackbarComp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -16,8 +16,7 @@ import com.alcntml.myapplication.fragment.BottomSheetFragment4
 import com.alcntml.myapplication.util.TrayHelper
 import com.alcntml.myapplication.util.TrayModel
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import kotlinx.android.synthetic.main.mva10_bottom_navigation.*
-import kotlinx.android.synthetic.main.mva10_bottom_navigation.view.*
+import kotlinx.android.synthetic.main.mva_bottom_navigation.view.*
 
 class TrayNavigationComponent: CoordinatorLayout{
 
@@ -35,7 +34,7 @@ class TrayNavigationComponent: CoordinatorLayout{
     }
 
     private fun init(){
-        LayoutInflater.from(context).inflate(R.layout.mva10_bottom_navigation,this,true)
+        LayoutInflater.from(context).inflate(R.layout.mva_bottom_navigation,this,true)
 
         trayModel = TrayModel(
                 arrayListOf(

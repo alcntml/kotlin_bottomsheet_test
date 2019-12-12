@@ -1417,6 +1417,8 @@ drawable mtrl_popupmenu_background
 drawable mtrl_popupmenu_background_dark
 drawable mtrl_slider_label
 drawable mtrl_tabs_default_indicator
+drawable mva_snackbar_bottom_bg
+drawable mva_snackbar_top_bg
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -1505,6 +1507,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id bottomSnackBtn
 id bottom_sheet1
 id bottom_sheet2
 id bottom_sheet3
@@ -1526,6 +1529,7 @@ id chronometer
 id clear_text
 id clip_horizontal
 id clip_vertical
+id closeIV
 id closeTV
 id collapseActionView
 id confirm_button
@@ -1573,6 +1577,7 @@ id hideable
 id home
 id homeAsUp
 id icon
+id iconIV
 id icon_group
 id ifRoom
 id image
@@ -1589,6 +1594,7 @@ id listMode
 id list_item
 id masked
 id message
+id messageTV
 id middle
 id mini
 id month_grid
@@ -1618,6 +1624,8 @@ id mtrl_picker_text_input_range_end
 id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id multiply
+id mvaBottomSnackbarComp
+id mvaTopSnackbarComp
 id navigation_header_container
 id never
 id noScroll
@@ -1633,6 +1641,8 @@ id overlay1
 id overlay2
 id overlay3
 id overlay4
+id overlayInvisibleV
+id overlayV
 id packed
 id parallax
 id parent
@@ -1671,6 +1681,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id shadowV
+id sheetFL
 id shortcut
 id showCustom
 id showHome
@@ -1730,6 +1741,7 @@ id title_template
 id toolbar
 id top
 id topPanel
+id topSnackBtn
 id touch_outside
 id transition_current_scene
 id transition_layout_save
@@ -1857,7 +1869,9 @@ layout mtrl_picker_header_title_text
 layout mtrl_picker_header_toggle
 layout mtrl_picker_text_input_date
 layout mtrl_picker_text_input_date_range
-layout mva10_bottom_navigation
+layout mva_bottom_navigation
+layout mva_bottom_snackbar_component
+layout mva_top_snackbar_component
 layout notification_action
 layout notification_action_tombstone
 layout notification_template_custom_big
