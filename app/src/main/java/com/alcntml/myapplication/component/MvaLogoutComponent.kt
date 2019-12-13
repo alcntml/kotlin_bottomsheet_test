@@ -17,6 +17,8 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.alcntml.myapplication.R
 import com.alcntml.myapplication.extention.setSafeOnClickListener
 import com.alcntml.myapplication.util.BlurUtil
+import com.alcntml.myapplication.util.async.BlurTask
+import com.alcntml.myapplication.util.async.interfaces.AsyncBlurListener
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.mva_logut_component.view.*
 import java.lang.Exception
@@ -44,19 +46,22 @@ class MvaLogoutComponent : CoordinatorLayout {
 
     private fun init() {
         LayoutInflater.from(context).inflate(R.layout.mva_logut_component, this, true)
-        val params: CoordinatorLayout.LayoutParams = CoordinatorLayout.LayoutParams(CoordinatorLayout.LayoutParams.MATCH_PARENT,CoordinatorLayout.LayoutParams.WRAP_CONTENT)
+        val params: CoordinatorLayout.LayoutParams = CoordinatorLayout.LayoutParams(
+            CoordinatorLayout.LayoutParams.MATCH_PARENT,
+            CoordinatorLayout.LayoutParams.WRAP_CONTENT
+        )
         params.gravity = Gravity.BOTTOM
         layoutParams = params
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheetFL)
         bottomSheetBehavior.addBottomSheetCallback(bottomSheetCallback)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-        closeIV.setSafeOnClickListener{
+        closeIV.setSafeOnClickListener {
             dismiss()
         }
-        negativeBtn.setSafeOnClickListener{
+        negativeBtn.setSafeOnClickListener {
             dismiss()
         }
-        positiveBtn.setSafeOnClickListener{
+        positiveBtn.setSafeOnClickListener {
             onLogoutListener?.onLogout()
         }
     }
@@ -64,7 +69,7 @@ class MvaLogoutComponent : CoordinatorLayout {
     public fun show(onLogoutListener: OnLogoutListener, blurView: View) {
         this.onLogoutListener = onLogoutListener
         if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_COLLAPSED) {
-            controlBlur(blurView)
+            controlBlur(context, blurView)
             bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
         }
     }
@@ -100,20 +105,18 @@ class MvaLogoutComponent : CoordinatorLayout {
 
     }
 
-    private fun controlBlur(blurView: View){
-        //Normally "Build.VERSION_CODES.JELLY_BEAN_MR1" but we apply for above "Build.VERSION_CODES.M" becouse of performans issues
+    private fun controlBlur(context: Context, blurView: View) {
+        //Normally version can be "Build.VERSION_CODES.JELLY_BEAN_MR1" but we apply "Build.VERSION_CODES.M" becouse of performans issues
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            try {
-                val blurUtil: BlurUtil = BlurUtil()
-                val bitmap: Bitmap? = blurUtil.getBitmapFromView(blurView, Color.parseColor("#000000"))
-                if (bitmap != null){
-                    val blurBitmap = blurUtil.blur(context,bitmap)
-                    if (blurBitmap != null){
-                        overlayBlurV.background = BitmapDrawable(context.resources, blurBitmap);
-                    }
-                }
-            }catch (e: Exception){
-                e.printStackTrace()
+            BlurTask(context, blurView, -1, onBlurListener).execute()
+        }
+    }
+
+    private var onBlurListener = object :
+        AsyncBlurListener {
+        override fun onLoad(bitmap: Bitmap?, position: Int) {
+            if (bitmap != null) {
+                overlayBlurV.background = BitmapDrawable(context.resources, bitmap);
             }
         }
     }
@@ -126,32 +129,32 @@ class MvaLogoutComponent : CoordinatorLayout {
         if (offset == 0.0f) {
             hideOverlay()
             bottomSheetIndicator.visibility = View.INVISIBLE
-        }else{
+        } else {
             showOverlay()
         }
     }
 
-    private fun showOverlay(){
+    private fun showOverlay() {
         overlayV.visibility = View.VISIBLE
         overlayBlurV.visibility = View.VISIBLE
         Handler().postDelayed({
-            overlayV.setSafeOnClickListener{
+            overlayV.setSafeOnClickListener {
                 dismiss()
             }
             overlayBlurV.setSafeOnClickListener {
                 dismiss()
             }
-        },300)
+        }, 300)
     }
 
-    private fun hideOverlay(){
+    private fun hideOverlay() {
         overlayV.setOnClickListener(null)
         overlayBlurV.setOnClickListener(null)
         overlayV.visibility = View.GONE
         overlayBlurV.visibility = View.GONE
     }
 
-    public interface OnLogoutListener{
+    public interface OnLogoutListener {
         fun onLogout()
     }
 }

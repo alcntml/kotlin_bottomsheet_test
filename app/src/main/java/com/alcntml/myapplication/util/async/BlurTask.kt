@@ -12,7 +12,7 @@ import com.alcntml.myapplication.util.BlurUtil
 import java.lang.Exception
 import java.lang.ref.WeakReference
 
-public class BlurTask(context: Context, blurView: View, private val position: Int, asyncBlurListener: AsyncBlurListener) : AsyncTask<Void, Void, Bitmap>() {
+public class BlurTask(context: Context, blurView: View, private val position: Int = -1, asyncBlurListener: AsyncBlurListener) : AsyncTask<Void, Void, Bitmap>() {
 
     private val contextReference: WeakReference<Context> = WeakReference<Context>(context);
     private val viewReference: WeakReference<View> = WeakReference<View>(blurView);
