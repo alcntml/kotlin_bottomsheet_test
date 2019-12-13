@@ -7,8 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.alcntml.myapplication.R
-import com.alcntml.myapplication.util.TrayHelper
-import kotlinx.android.synthetic.main.bottom_sheet1.*
+import com.alcntml.myapplication.extention.setSafeOnClickListener
+import com.alcntml.myapplication.component.tray.util.TrayHelper
+import kotlinx.android.synthetic.main.fragment_sheet1.*
 
 public class BottomSheetFragment1 : Fragment() {
 
@@ -32,7 +33,7 @@ public class BottomSheetFragment1 : Fragment() {
 
     ): View? {
         if (rootView == null) {
-            rootView = inflater.inflate(R.layout.bottom_sheet1, container, false)
+            rootView = inflater.inflate(R.layout.fragment_sheet1, container, false)
         }
         return rootView
     }
@@ -40,7 +41,7 @@ public class BottomSheetFragment1 : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         position = arguments!!.getInt("position")
-        closeTV.setOnClickListener{
+        closeTV.setSafeOnClickListener{
             if (context != null) {
                 TrayHelper.getInstance(context!!).collapse(position)
             }

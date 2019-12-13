@@ -18,7 +18,7 @@ public class BottomSheetFragment4 : Fragment() {
 
     ): View? {
         if (rootView == null) {
-            rootView = inflater.inflate(R.layout.bottom_sheet4, container, false)
+            rootView = inflater.inflate(R.layout.fragment_sheet4, container, false)
         }
         return rootView
 

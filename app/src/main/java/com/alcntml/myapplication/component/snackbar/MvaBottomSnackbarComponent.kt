@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.FrameLayout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.alcntml.myapplication.R
+import com.alcntml.myapplication.extention.setSafeOnClickListener
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.mva_top_snackbar_component.view.*
 
@@ -70,7 +71,7 @@ class MvaBottomSnackbarComponent : CoordinatorLayout {
             /*overlayInvisibleV.setOnClickListener{
                 dismiss()
             }*/
-            closeIV.setOnClickListener{
+            closeIV.setSafeOnClickListener{
                 dismiss()
             }
             closeIV.visibility = View.VISIBLE
@@ -79,11 +80,15 @@ class MvaBottomSnackbarComponent : CoordinatorLayout {
             closeIV.setOnClickListener(null)
             closeIV.visibility = View.GONE
         }
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+        if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_COLLAPSED) {
+            bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+        }
     }
 
     private fun dismiss(){
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED) {
+            bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        }
         if(mHandler != null){
             mHandler!!.removeCallbacks(mRunnable)
         }
@@ -128,15 +133,29 @@ class MvaBottomSnackbarComponent : CoordinatorLayout {
         }
     }
 
-    private fun setOverlay(offset: Float){
+    private fun setOverlay(offset: Float) {
         overlayV.alpha = offset
+        /*overlayInvisibleV.visibility = View.VISIBLE*/
         if (offset == 0.0f) {
-            overlayV.visibility = View.GONE
+            hideOverlay()
             /*overlayInvisibleV.visibility = View.GONE*/
-        } else {
-            overlayV.visibility = View.VISIBLE
-            /*overlayInvisibleV.visibility = View.VISIBLE*/
+        }else{
+            showOverlay()
         }
+    }
+
+    private fun showOverlay(){
+        overlayV.visibility = View.VISIBLE
+        Handler().postDelayed({
+            overlayV.setSafeOnClickListener{
+                dismiss()
+            }
+        },300)
+    }
+
+    private fun hideOverlay(){
+        overlayV.setOnClickListener(null)
+        overlayV.visibility = View.GONE
     }
 
     private var mRunnable: Runnable = Runnable { dismiss() }

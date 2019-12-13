@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/rootRL">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <RelativeLayout
+        android:id="@+id/contentRL"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/content_main" />
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -18,28 +21,28 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/color_text"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <include layout="@layout/content_main" />
+    </RelativeLayout>
 
     <com.alcntml.myapplication.component.snackbar.MvaTopSnackbarComponent
         android:id="@+id/mvaTopSnackbarComp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize" />
+        android:layout_height="match_parent" />
 
-    <com.alcntml.myapplication.component.TrayNavigationComponent
+    <com.alcntml.myapplication.component.tray.MvaTrayComponent
         android:id="@+id/trayNavComp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
         android:layout_gravity="bottom"/>
 
     <com.alcntml.myapplication.component.snackbar.MvaBottomSnackbarComponent
         android:id="@+id/mvaBottomSnackbarComp"
         android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.alcntml.myapplication.component.MvaLogoutComponent
+        android:id="@+id/mvaLogoutComp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="?attr/actionBarSize" />
+        android:layout_gravity="bottom" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

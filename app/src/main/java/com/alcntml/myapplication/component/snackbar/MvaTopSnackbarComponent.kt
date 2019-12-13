@@ -1,14 +1,23 @@
 package com.alcntml.myapplication.component.snackbar
 
 import android.content.Context
+import android.graphics.Bitmap
+import android.os.Build
 import android.os.Handler
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.view.isVisible
 import com.alcntml.myapplication.R
+import com.alcntml.myapplication.extention.setSafeOnClickListener
+import com.alcntml.myapplication.util.BlurUtil
 import kotlinx.android.synthetic.main.mva_top_snackbar_component.view.*
+import android.view.ViewGroup
+import java.lang.Exception
+
 class MvaTopSnackbarComponent : CoordinatorLayout {
 
     private val LONG_MILLIS = 4000L
@@ -69,10 +78,10 @@ class MvaTopSnackbarComponent : CoordinatorLayout {
         currentDuration = duration
         messageTV.text = message
         if (isCancelable){
-            /*overlayInvisibleV.setOnClickListener{
+            /*overlayInvisibleV.setSafeOnClickListener{
                 dismiss()
             }*/
-            closeIV.setOnClickListener{
+            closeIV.setSafeOnClickListener{
                 dismiss()
             }
             closeIV.visibility = View.VISIBLE
@@ -81,11 +90,15 @@ class MvaTopSnackbarComponent : CoordinatorLayout {
             closeIV.setOnClickListener(null)
             closeIV.visibility = View.GONE
         }
-        topSheetBehavior.state = TopSheetBehavior.STATE_EXPANDED
+        if (topSheetBehavior.state == TopSheetBehavior.STATE_COLLAPSED) {
+            topSheetBehavior.state = TopSheetBehavior.STATE_EXPANDED
+        }
     }
 
     private fun dismiss() {
-        topSheetBehavior.state = TopSheetBehavior.STATE_COLLAPSED
+        if (topSheetBehavior.state == TopSheetBehavior.STATE_EXPANDED) {
+            topSheetBehavior.state = TopSheetBehavior.STATE_COLLAPSED
+        }
         if(mHandler != null){
             mHandler!!.removeCallbacks(mRunnable)
         }
@@ -130,12 +143,30 @@ class MvaTopSnackbarComponent : CoordinatorLayout {
 
     private fun setOverlay(offset: Float) {
         overlayV.alpha = offset
+        /*overlayInvisibleV.visibility = View.VISIBLE*/
         if (offset == 0.0f) {
-            overlayV.visibility = View.GONE
+            hideOverlay()
             /*overlayInvisibleV.visibility = View.GONE*/
-        } else {
+        }else{
+            showOverlay()
+        }
+    }
+
+    private fun showOverlay(){
+        if (!overlayV.isVisible) {
             overlayV.visibility = View.VISIBLE
-            /*overlayInvisibleV.visibility = View.VISIBLE*/
+            Handler().postDelayed({
+                overlayV.setSafeOnClickListener {
+                    dismiss()
+                }
+            }, 300)
+        }
+    }
+
+    private fun hideOverlay(){
+        if (overlayV.isVisible) {
+            overlayV.setOnClickListener(null)
+            overlayV.visibility = View.GONE
         }
     }
 

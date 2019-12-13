@@ -18,6 +18,14 @@
         android:text="open on bottom"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@+id/topSnackBtn"/>
+
+    <Button
+        android:id="@+id/logoutBtn"
+        android:text="logout"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/bottomSnackBtn"/>
 </RelativeLayout>
