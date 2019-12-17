@@ -27,6 +27,8 @@ class MvaLogoutComponent : CoordinatorLayout {
 
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<FrameLayout>
     private var onLogoutListener: OnLogoutListener? = null
+    private var blurTask: BlurTask? = null
+    private var blurView: View? = null
 
     constructor(context: Context) : super(context) {
         init()
@@ -66,10 +68,17 @@ class MvaLogoutComponent : CoordinatorLayout {
         }
     }
 
-    public fun show(onLogoutListener: OnLogoutListener, blurView: View) {
+    public fun setBlurView(blurView: View?){
+        this.blurView = blurView
+        if (blurView != null) {
+            blurTask = BlurTask(context, blurView, onBlurListener)
+        }
+    }
+
+    public fun show(onLogoutListener: OnLogoutListener) {
         this.onLogoutListener = onLogoutListener
         if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_COLLAPSED) {
-            controlBlur(context, blurView)
+            /*controlBlur(context)*/
             bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
         }
     }
@@ -105,16 +114,19 @@ class MvaLogoutComponent : CoordinatorLayout {
 
     }
 
-    private fun controlBlur(context: Context, blurView: View) {
+    private fun controlBlur(context: Context) {
         //Normally version can be "Build.VERSION_CODES.JELLY_BEAN_MR1" but we apply "Build.VERSION_CODES.M" becouse of performans issues
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            BlurTask(context, blurView, -1, onBlurListener).execute()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && blurTask != null) {
+            if (blurView != null) {
+                blurTask = BlurTask(context, blurView!!, onBlurListener)
+                blurTask!!.execute()
+            }
         }
     }
 
     private var onBlurListener = object :
         AsyncBlurListener {
-        override fun onLoad(bitmap: Bitmap?, position: Int) {
+        override fun onLoad(bitmap: Bitmap?) {
             if (bitmap != null) {
                 overlayBlurV.background = BitmapDrawable(context.resources, bitmap);
             }

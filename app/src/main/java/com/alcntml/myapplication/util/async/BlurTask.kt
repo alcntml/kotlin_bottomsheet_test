@@ -12,11 +12,20 @@ import com.alcntml.myapplication.util.BlurUtil
 import java.lang.Exception
 import java.lang.ref.WeakReference
 
-public class BlurTask(context: Context, blurView: View, private val position: Int = -1, asyncBlurListener: AsyncBlurListener) : AsyncTask<Void, Void, Bitmap>() {
+public class BlurTask(context: Context, blurView: View, asyncBlurListener: AsyncBlurListener) : AsyncTask<Void, Void, Bitmap>() {
 
     private val contextReference: WeakReference<Context> = WeakReference<Context>(context);
     private val viewReference: WeakReference<View> = WeakReference<View>(blurView);
     private val listenerReference: WeakReference<AsyncBlurListener> = WeakReference<AsyncBlurListener>(asyncBlurListener);
+    private var position: Int = -1
+
+    public fun setPosition(position: Int){
+        this.position = position
+    }
+
+    public fun getPosition(): Int{
+        return position
+    }
 
     @RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     override fun doInBackground(vararg params: Void): Bitmap? {
@@ -37,7 +46,7 @@ public class BlurTask(context: Context, blurView: View, private val position: In
     override fun onPostExecute(result: Bitmap?) {
         super.onPostExecute(result)
         if (result != null) {
-            listenerReference.get()?.onLoad(result, position)
+            listenerReference.get()?.onLoad(result)
         }
     }
 }

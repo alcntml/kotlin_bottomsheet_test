@@ -83,7 +83,10 @@ class MvaTrayComponent : CoordinatorLayout {
                 it!!.commit()
             }
         }
-        trayModel?.let { TrayHelper.getInstance(context).setMenu(it,blurView) }
+        trayModel?.let {
+            TrayHelper.getInstance(context).setMenu(it)
+            TrayHelper.getInstance(context).setBlurView(context,blurView)
+        }
     }
 
     private var trayCallback: TrayCallback = object :

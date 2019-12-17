@@ -34,12 +34,14 @@ class MainActivity : AppCompatActivity() {
                 MvaBottomSnackbarComponent.Companion.SHORT
             )
         }
+
+        mvaLogoutComp.setBlurView(contentRL)
         logoutBtn.setSafeOnClickListener {
             mvaLogoutComp.show(object : MvaLogoutComponent.OnLogoutListener {
                 override fun onLogout() {
                     Toast.makeText(this@MainActivity,"Logged out!", Toast.LENGTH_SHORT).show()
                 }
-            },contentRL)
+            })
         }
     }
 }

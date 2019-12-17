@@ -18,14 +18,21 @@ class TrayHelper private constructor(context: Context) {
 
     private var trayModel: TrayModel? = null
     private var blurView: View? = null
+    private var blurTask: BlurTask? = null
     private var lastTimeClicked: Long = 0
     private val mContext = context
 
     companion object : SingletonHolder<TrayHelper, Context>(::TrayHelper)
 
-    fun setMenu(trayModel: TrayModel, blurView: View) {
-        this.trayModel = trayModel
+    public fun setBlurView(context: Context,blurView: View?){
         this.blurView = blurView
+        if (blurView != null) {
+            blurTask = BlurTask(context, blurView, onBlurListener)
+        }
+    }
+
+    fun setMenu(trayModel: TrayModel) {
+        this.trayModel = trayModel
         for (i in 0 until trayModel.tabList.size) {
             trayModel.bottomSheetBehaviorList[i].saveFlags = BottomSheetBehavior.SAVE_ALL
             val finalI = i
@@ -76,22 +83,27 @@ class TrayHelper private constructor(context: Context) {
 
     fun expand(position: Int) {
         if (trayModel!!.bottomSheetBehaviorList[position].state == BottomSheetBehavior.STATE_COLLAPSED) {
-            controlBlur(mContext, blurView!!, position)
+            blurTask!!.setPosition(position)
+            /*controlBlur(mContext, blurView!!, position)*/
             trayModel!!.bottomSheetBehaviorList[position].state = BottomSheetBehavior.STATE_EXPANDED
         }
     }
 
     private fun controlBlur(context: Context, blurView: View, position: Int){
-        //Normally "Build.VERSION_CODES.JELLY_BEAN_MR1" but we apply for above "Build.VERSION_CODES.M" becouse of performans issues
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            BlurTask(context,blurView,position,onBlurListener).execute()
+        //Normally version can be "Build.VERSION_CODES.JELLY_BEAN_MR1" but we apply "Build.VERSION_CODES.M" becouse of performans issues
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && blurTask != null) {
+            blurTask = BlurTask(context, blurView, onBlurListener)
+            blurTask!!.setPosition(position)
+            blurTask!!.execute()
         }
     }
 
     private var onBlurListener = object :
         AsyncBlurListener {
-        override fun onLoad(bitmap: Bitmap?, position: Int) {
-            trayModel!!.blurOverlayList[position].background = BitmapDrawable(mContext.resources, bitmap);
+        override fun onLoad(bitmap: Bitmap?) {
+            if (bitmap != null && blurTask != null) {
+                trayModel!!.blurOverlayList[blurTask!!.getPosition()].background = BitmapDrawable(context.resources, bitmap);
+            }
         }
     }
 
