@@ -9,16 +9,16 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.fragment.app.FragmentManager
 import com.alcntml.myapplication.R
 import com.alcntml.myapplication.component.tray.`interface`.TrayCallback
-import com.alcntml.myapplication.fragment.BottomSheetFragment1
-import com.alcntml.myapplication.fragment.BottomSheetFragment2
-import com.alcntml.myapplication.fragment.BottomSheetFragment3
-import com.alcntml.myapplication.fragment.BottomSheetFragment4
+import com.alcntml.myapplication.fragment.TrayMenuFragment1
+import com.alcntml.myapplication.fragment.TrayMenuFragment2
+import com.alcntml.myapplication.fragment.TrayMenuFragment3
+import com.alcntml.myapplication.fragment.TrayMenuFragment4
 import com.alcntml.myapplication.component.tray.util.TrayHelper
 import com.alcntml.myapplication.component.tray.util.TrayModel
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import kotlinx.android.synthetic.main.mva_tray_component.view.*
+import kotlinx.android.synthetic.main.component_tray.view.*
 
-class MvaTrayComponent : CoordinatorLayout {
+class TrayComponent : CoordinatorLayout {
 
     private var trayModel: TrayModel? = null;
     private var supportFragmentManager: FragmentManager? = null
@@ -40,7 +40,7 @@ class MvaTrayComponent : CoordinatorLayout {
     }
 
     private fun init() {
-        LayoutInflater.from(context).inflate(R.layout.mva_tray_component, this, true)
+        LayoutInflater.from(context).inflate(R.layout.component_tray, this, true)
 
         trayModel = TrayModel(
             arrayListOf(
@@ -70,10 +70,10 @@ class MvaTrayComponent : CoordinatorLayout {
         //set tab visibility and fragment according to response
         if (supportFragmentManager != null) {
             supportFragmentManager?.beginTransaction().let {
-                it!!.replace(R.id.bottom_sheet1, BottomSheetFragment1.newInstance(0))
-                it.replace(R.id.bottom_sheet2, BottomSheetFragment2())
-                it.replace(R.id.bottom_sheet3, BottomSheetFragment3())
-                it.replace(R.id.bottom_sheet4, BottomSheetFragment4())
+                it!!.replace(R.id.bottom_sheet1, TrayMenuFragment1.newInstance(0))
+                it.replace(R.id.bottom_sheet2, TrayMenuFragment2())
+                it.replace(R.id.bottom_sheet3, TrayMenuFragment3())
+                it.replace(R.id.bottom_sheet4, TrayMenuFragment4())
                 it.commit()
             }
         }

@@ -9,18 +9,18 @@ import androidx.fragment.app.Fragment
 import com.alcntml.myapplication.R
 import com.alcntml.myapplication.extention.setSafeOnClickListener
 import com.alcntml.myapplication.component.tray.util.TrayHelper
-import kotlinx.android.synthetic.main.fragment_sheet1.*
+import kotlinx.android.synthetic.main.fragment_tray_menu1.*
 
-public class BottomSheetFragment1 : Fragment() {
+public class TrayMenuFragment1 : Fragment() {
 
     private var rootView: View? = null
     private var position: Int = -1
 
     companion object {
-        fun newInstance(position: Int): BottomSheetFragment1 {
+        fun newInstance(position: Int): TrayMenuFragment1 {
             val b: Bundle = Bundle()
             b.putInt("position",position)
-            val fragment = BottomSheetFragment1()
+            val fragment = TrayMenuFragment1()
             fragment.arguments = b
             return fragment
         }
@@ -33,7 +33,7 @@ public class BottomSheetFragment1 : Fragment() {
 
     ): View? {
         if (rootView == null) {
-            rootView = inflater.inflate(R.layout.fragment_sheet1, container, false)
+            rootView = inflater.inflate(R.layout.fragment_tray_menu1, container, false)
         }
         return rootView
     }

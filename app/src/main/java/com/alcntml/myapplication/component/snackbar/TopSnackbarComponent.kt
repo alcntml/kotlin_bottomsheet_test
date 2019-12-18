@@ -1,23 +1,18 @@
 package com.alcntml.myapplication.component.snackbar
 
 import android.content.Context
-import android.graphics.Bitmap
-import android.os.Build
 import android.os.Handler
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
-import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.isVisible
 import com.alcntml.myapplication.R
 import com.alcntml.myapplication.extention.setSafeOnClickListener
-import kotlinx.android.synthetic.main.mva_top_snackbar_component.view.*
-import android.view.ViewGroup
-import java.lang.Exception
+import kotlinx.android.synthetic.main.component_top_snackbar.view.*
 
-class MvaTopSnackbarComponent : CoordinatorLayout {
+class TopSnackbarComponent : CoordinatorLayout {
 
     private val LONG_MILLIS = 4000L
     private val SHORT_MILLIS = 2000L
@@ -49,7 +44,7 @@ class MvaTopSnackbarComponent : CoordinatorLayout {
     }
 
     private fun init() {
-        LayoutInflater.from(context).inflate(R.layout.mva_top_snackbar_component, this, true)
+        LayoutInflater.from(context).inflate(R.layout.component_top_snackbar, this, true)
         layoutParams = CoordinatorLayout.LayoutParams(CoordinatorLayout.LayoutParams.MATCH_PARENT,CoordinatorLayout.LayoutParams.WRAP_CONTENT)
         topSheetBehavior = TopSheetBehavior.from(sheetFL)
         topSheetBehavior.setTopSheetCallback(topSheetCallback)

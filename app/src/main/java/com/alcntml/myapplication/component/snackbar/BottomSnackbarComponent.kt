@@ -10,9 +10,9 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.alcntml.myapplication.R
 import com.alcntml.myapplication.extention.setSafeOnClickListener
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import kotlinx.android.synthetic.main.mva_top_snackbar_component.view.*
+import kotlinx.android.synthetic.main.component_top_snackbar.view.*
 
-class MvaBottomSnackbarComponent : CoordinatorLayout {
+class BottomSnackbarComponent : CoordinatorLayout {
 
     private val LONG_MILLIS = 4000L
     private val SHORT_MILLIS = 2000L
@@ -38,7 +38,7 @@ class MvaBottomSnackbarComponent : CoordinatorLayout {
     }
 
     private fun init(){
-        LayoutInflater.from(context).inflate(R.layout.mva_bottom_snackbar_component,this,true)
+        LayoutInflater.from(context).inflate(R.layout.component_bottom_snackbar,this,true)
         layoutParams = CoordinatorLayout.LayoutParams(CoordinatorLayout.LayoutParams.MATCH_PARENT,CoordinatorLayout.LayoutParams.WRAP_CONTENT)
 
         bottomSheetBehavior = BottomSheetBehavior.from(sheetFL)

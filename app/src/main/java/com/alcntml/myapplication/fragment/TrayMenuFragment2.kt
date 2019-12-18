@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.alcntml.myapplication.R
 
-public class BottomSheetFragment2 : Fragment() {
+public class TrayMenuFragment2 : Fragment() {
 
     private var rootView: View? = null
 
@@ -19,7 +19,7 @@ public class BottomSheetFragment2 : Fragment() {
 
     ): View? {
         if (rootView == null) {
-            rootView = inflater.inflate(R.layout.fragment_sheet2, container, false)
+            rootView = inflater.inflate(R.layout.fragment_tray_menu2, container, false)
         }
         return rootView
 

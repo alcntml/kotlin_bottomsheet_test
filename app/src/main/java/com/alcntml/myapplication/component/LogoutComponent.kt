@@ -1,8 +1,6 @@
 package com.alcntml.myapplication.component
 
 import android.content.Context
-import android.graphics.drawable.Drawable
-import android.os.Build
 import android.os.Handler
 import android.util.AttributeSet
 import android.view.Gravity
@@ -13,9 +11,9 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.alcntml.myapplication.R
 import com.alcntml.myapplication.extention.setSafeOnClickListener
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import kotlinx.android.synthetic.main.mva_logut_component.view.*
+import kotlinx.android.synthetic.main.component_logut.view.*
 
-class MvaLogoutComponent : CoordinatorLayout {
+class LogoutComponent : CoordinatorLayout {
 
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<FrameLayout>
     private var onLogoutListener: OnLogoutListener? = null
@@ -37,7 +35,7 @@ class MvaLogoutComponent : CoordinatorLayout {
     }
 
     private fun init() {
-        LayoutInflater.from(context).inflate(R.layout.mva_logut_component, this, true)
+        LayoutInflater.from(context).inflate(R.layout.component_logut, this, true)
         val params: CoordinatorLayout.LayoutParams = CoordinatorLayout.LayoutParams(
             CoordinatorLayout.LayoutParams.MATCH_PARENT,
             CoordinatorLayout.LayoutParams.WRAP_CONTENT

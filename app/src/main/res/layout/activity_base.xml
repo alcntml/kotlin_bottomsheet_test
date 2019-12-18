@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAccent"
-    tools:context=".MainActivity"
+    tools:context=".BaseActivity"
     android:id="@+id/rootRL">
 
     <RelativeLayout
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <include layout="@layout/content_main" />
+        <include layout="@layout/content_base" />
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -23,23 +23,23 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" />
     </RelativeLayout>
 
-    <com.alcntml.myapplication.component.snackbar.MvaTopSnackbarComponent
+    <com.alcntml.myapplication.component.snackbar.TopSnackbarComponent
         android:id="@+id/mvaTopSnackbarComp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <com.alcntml.myapplication.component.tray.MvaTrayComponent
+    <com.alcntml.myapplication.component.tray.TrayComponent
         android:id="@+id/trayNavComp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="bottom"/>
 
-    <com.alcntml.myapplication.component.snackbar.MvaBottomSnackbarComponent
+    <com.alcntml.myapplication.component.snackbar.BottomSnackbarComponent
         android:id="@+id/mvaBottomSnackbarComp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <com.alcntml.myapplication.component.MvaLogoutComponent
+    <com.alcntml.myapplication.component.LogoutComponent
         android:id="@+id/mvaLogoutComp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

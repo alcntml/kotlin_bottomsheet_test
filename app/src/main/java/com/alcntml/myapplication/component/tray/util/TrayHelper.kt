@@ -7,7 +7,7 @@ import android.view.View
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.alcntml.myapplication.util.SingletonHolder
-import kotlinx.android.synthetic.main.mva_logut_component.view.*
+import kotlinx.android.synthetic.main.component_logut.view.*
 
 class TrayHelper private constructor(context: Context) {
 
