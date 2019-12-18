@@ -6,9 +6,9 @@
         android:id="@+id/overlayV"
         android:layout_width="match_parent"
         android:layout_height="170dp"
-        android:alpha="0"
         android:layout_gravity="bottom"
-        android:background="@drawable/mva_snackbar_bottom_bg"
+        android:alpha="0"
+        android:background="@drawable/snackbar_bottom_bg"
         android:visibility="gone" />
 
     <View
@@ -25,9 +25,9 @@
         android:id="@+id/sheetFL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:behavior_hideable="false"
         android:layout_gravity="bottom"
         android:layout_marginBottom="12dp"
+        app:behavior_hideable="false"
         app:behavior_peekHeight="1dp"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
@@ -37,6 +37,9 @@
             android:layout_marginStart="12dp"
             android:layout_marginEnd="12dp"
             android:layout_marginBottom="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp"

@@ -63,7 +63,7 @@ class LogoutComponent : CoordinatorLayout {
         }
     }
 
-    private fun dismiss() {
+    public fun dismiss() {
         if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_EXPANDED) {
             bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
         }
