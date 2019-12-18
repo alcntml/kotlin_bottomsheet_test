@@ -7,10 +7,12 @@ import android.animation.ObjectAnimator
 import android.app.Activity
 import android.app.Dialog
 import android.content.Context
+import android.content.DialogInterface
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Handler
+import android.view.KeyEvent
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
@@ -40,6 +42,8 @@ public class MvaAlertDialog(
     private var overlayV: View? = null
     private var contentCV: CardView? = null
 
+    private var backPressed = false
+
     public fun showWithDelay(delay: Long){
         dialogView = Dialog(context, R.style.MvaAlertDialogTheme)
         dialogView!!.window!!.requestFeature(Window.FEATURE_NO_TITLE)
@@ -63,6 +67,14 @@ public class MvaAlertDialog(
 
         dialogView!!.setOnDismissListener{
             startDismissAnimation()
+        }
+        dialogView!!.setOnKeyListener{ dialogInterface: DialogInterface, i: Int, keyEvent: KeyEvent ->
+            if (i == KeyEvent.KEYCODE_BACK && !backPressed) {
+                backPressed = true
+                dismiss()
+                return@setOnKeyListener true
+            }
+            return@setOnKeyListener false
         }
 
         setTitle()
