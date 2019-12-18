@@ -58,13 +58,7 @@ class MvaTrayComponent : CoordinatorLayout {
                 , overlay2
                 , overlay3
                 , overlay4
-            ), arrayListOf(
-                overlayBlurV1
-                , overlayBlurV2
-                , overlayBlurV3
-                , overlayBlurV4
-            )
-            , trayCallback
+            ), trayCallback
         )
     }
 
@@ -72,20 +66,19 @@ class MvaTrayComponent : CoordinatorLayout {
         this.supportFragmentManager = supportFragmentManager
     }
 
-    public fun initView(blurView: View) {
+    public fun initView() {
         //set tab visibility and fragment according to response
         if (supportFragmentManager != null) {
             supportFragmentManager?.beginTransaction().let {
                 it!!.replace(R.id.bottom_sheet1, BottomSheetFragment1.newInstance(0))
-                it!!.replace(R.id.bottom_sheet2, BottomSheetFragment2())
-                it!!.replace(R.id.bottom_sheet3, BottomSheetFragment3())
-                it!!.replace(R.id.bottom_sheet4, BottomSheetFragment4())
-                it!!.commit()
+                it.replace(R.id.bottom_sheet2, BottomSheetFragment2())
+                it.replace(R.id.bottom_sheet3, BottomSheetFragment3())
+                it.replace(R.id.bottom_sheet4, BottomSheetFragment4())
+                it.commit()
             }
         }
         trayModel?.let {
             TrayHelper.getInstance(context).setMenu(it)
-            TrayHelper.getInstance(context).setBlurView(context,blurView)
         }
     }
 

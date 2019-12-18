@@ -9,6 +9,9 @@ MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/alicantemel/.gradle/cach
 MERGED from [androidx.core:core-ktx:1.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/d8980e3bc8c9f4943ed7cfe97d90f46e/jetified-core-ktx-1.1.0/AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/cb03767d570dabaa4f9c99205f614fc0/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/2e3dbac19c5102aa592a2cb992e4b508/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [jp.wasabeef:glide-transformations:4.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/b32a85a8912d8a6e6440f4bfac9833b8/jetified-glide-transformations-4.1.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.github.bumptech.glide:glide:4.10.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/45351b9a3a0ff3f97e6aa2b1a06b81da/jetified-glide-4.10.0/AndroidManifest.xml:2:1-12:12
+MERGED from [jp.co.cyberagent.android:gpuimage:2.0.4] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/c10407150444f65476086e33434b57d0/jetified-gpuimage-2.0.4/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0-rc01] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/d82e8f5cc32b89b0a725d288162b9a4d/jetified-viewpager2-1.0.0-rc01/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/a28451dcdc2ca3117d93e6f527d1810b/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/23ed6cb839e63166288b442e826d72f3/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -24,6 +27,7 @@ MERGED from [androidx.recyclerview:recyclerview:1.1.0-rc01] /Users/alicantemel/.
 MERGED from [androidx.customview:customview:1.0.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/7cdb52395d9a3312f85241b20be1878f/customview-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core:1.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/b0b8e2d713d071964ed253e0e6741c6d/core-1.1.0/AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/edae5bd6e121d5d9ecb98ed2c4f39c7a/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/006d47a6d402ffbc5fb23fdea2b1ef59/jetified-gifdecoder-4.10.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/b27d1abe5951fd1abd5bd5606cc6f3ae/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/d8190ec6b84fc143d5e56d3b77d6d169/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/b461baabe8d322711f576981a4c1538e/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
@@ -55,8 +59,12 @@ MERGED from [com.google.android.material:material:1.2.0-alpha02] /Users/alicante
 MERGED from [com.google.android.material:material:1.2.0-alpha02] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/0edfe96aa71b8ab495bfee121ab383a4/material-1.2.0-alpha02/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/cb03767d570dabaa4f9c99205f614fc0/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/cb03767d570dabaa4f9c99205f614fc0/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:glide:4.10.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/45351b9a3a0ff3f97e6aa2b1a06b81da/jetified-glide-4.10.0/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.10.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/45351b9a3a0ff3f97e6aa2b1a06b81da/jetified-glide-4.10.0/AndroidManifest.xml:10:5-20
 MERGED from [androidx.core:core:1.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/b0b8e2d713d071964ed253e0e6741c6d/core-1.1.0/AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/b0b8e2d713d071964ed253e0e6741c6d/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/006d47a6d402ffbc5fb23fdea2b1ef59/jetified-gifdecoder-4.10.0/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/006d47a6d402ffbc5fb23fdea2b1ef59/jetified-gifdecoder-4.10.0/AndroidManifest.xml:9:5-20
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/b27d1abe5951fd1abd5bd5606cc6f3ae/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/b27d1abe5951fd1abd5bd5606cc6f3ae/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
 	android:appComponentFactory
@@ -101,6 +109,12 @@ MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/alicanteme
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/cb03767d570dabaa4f9c99205f614fc0/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/2e3dbac19c5102aa592a2cb992e4b508/cardview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/2e3dbac19c5102aa592a2cb992e4b508/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [jp.wasabeef:glide-transformations:4.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/b32a85a8912d8a6e6440f4bfac9833b8/jetified-glide-transformations-4.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [jp.wasabeef:glide-transformations:4.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/b32a85a8912d8a6e6440f4bfac9833b8/jetified-glide-transformations-4.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:glide:4.10.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/45351b9a3a0ff3f97e6aa2b1a06b81da/jetified-glide-4.10.0/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.10.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/45351b9a3a0ff3f97e6aa2b1a06b81da/jetified-glide-4.10.0/AndroidManifest.xml:6:5-8:41
+MERGED from [jp.co.cyberagent.android:gpuimage:2.0.4] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/c10407150444f65476086e33434b57d0/jetified-gpuimage-2.0.4/AndroidManifest.xml:7:5-9:41
+MERGED from [jp.co.cyberagent.android:gpuimage:2.0.4] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/c10407150444f65476086e33434b57d0/jetified-gpuimage-2.0.4/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0-rc01] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/d82e8f5cc32b89b0a725d288162b9a4d/jetified-viewpager2-1.0.0-rc01/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0-rc01] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/d82e8f5cc32b89b0a725d288162b9a4d/jetified-viewpager2-1.0.0-rc01/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/a28451dcdc2ca3117d93e6f527d1810b/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -131,6 +145,8 @@ MERGED from [androidx.core:core:1.1.0] /Users/alicantemel/.gradle/caches/transfo
 MERGED from [androidx.core:core:1.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/b0b8e2d713d071964ed253e0e6741c6d/core-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/edae5bd6e121d5d9ecb98ed2c4f39c7a/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/edae5bd6e121d5d9ecb98ed2c4f39c7a/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/006d47a6d402ffbc5fb23fdea2b1ef59/jetified-gifdecoder-4.10.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/006d47a6d402ffbc5fb23fdea2b1ef59/jetified-gifdecoder-4.10.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/b27d1abe5951fd1abd5bd5606cc6f3ae/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/b27d1abe5951fd1abd5bd5606cc6f3ae/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /Users/alicantemel/.gradle/caches/transforms-2/files-2.1/d8190ec6b84fc143d5e56d3b77d6d169/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44

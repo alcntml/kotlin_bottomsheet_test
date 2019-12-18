@@ -352,6 +352,8 @@ attr fontWeight
 attr foregroundInsidePadding
 attr gapBetweenBars
 attr goIcon
+attr gpuimage_show_loading
+attr gpuimage_surface_type
 attr haloColor
 attr haloRadius
 attr headerLayout
@@ -1574,6 +1576,7 @@ id fixed
 id forever
 id ghost_view
 id ghost_view_holder
+id glide_custom_view_target_tag
 id gone
 id group_divider
 id groups
@@ -1648,11 +1651,6 @@ id overlay1
 id overlay2
 id overlay3
 id overlay4
-id overlayBlurV
-id overlayBlurV1
-id overlayBlurV2
-id overlayBlurV3
-id overlayBlurV4
 id overlayInvisibleV
 id overlayV
 id packed
@@ -1719,6 +1717,7 @@ id start
 id stretch
 id submenuarrow
 id submit_area
+id surface_view
 id tabItem1
 id tabItem2
 id tabItem3
@@ -1748,6 +1747,7 @@ id textinput_error
 id textinput_helper_text
 id textinput_prefix_text
 id textinput_suffix_text
+id texture_view
 id time
 id title
 id titleDividerNoCustom
@@ -2722,6 +2722,7 @@ styleable FlowLayout itemSpacing lineSpacing
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
+styleable GPUImageView gpuimage_show_loading gpuimage_surface_type
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable Insets paddingBottomSystemWindowInsets

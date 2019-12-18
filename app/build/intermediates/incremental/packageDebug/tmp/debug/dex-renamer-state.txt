@@ -1,4 +1,4 @@
-#Fri Dec 13 21:15:45 EET 2019
+#Wed Dec 18 10:55:53 EET 2019
 base.0=/Users/alicantemel/Documents/test_space/kotlinBottomsheetTest/app/build/intermediates/dex/debug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

@@ -1,34 +1,24 @@
 package com.alcntml.myapplication.component
 
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.Color
-import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Handler
 import android.util.AttributeSet
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.FrameLayout
-import androidx.appcompat.app.AppCompatActivity
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.alcntml.myapplication.R
 import com.alcntml.myapplication.extention.setSafeOnClickListener
-import com.alcntml.myapplication.util.BlurUtil
-import com.alcntml.myapplication.util.async.BlurTask
-import com.alcntml.myapplication.util.async.interfaces.AsyncBlurListener
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.mva_logut_component.view.*
-import java.lang.Exception
 
 class MvaLogoutComponent : CoordinatorLayout {
 
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<FrameLayout>
     private var onLogoutListener: OnLogoutListener? = null
-    private var blurTask: BlurTask? = null
-    private var blurView: View? = null
 
     constructor(context: Context) : super(context) {
         init()
@@ -68,17 +58,9 @@ class MvaLogoutComponent : CoordinatorLayout {
         }
     }
 
-    public fun setBlurView(blurView: View?){
-        this.blurView = blurView
-        if (blurView != null) {
-            blurTask = BlurTask(context, blurView, onBlurListener)
-        }
-    }
-
     public fun show(onLogoutListener: OnLogoutListener) {
         this.onLogoutListener = onLogoutListener
         if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_COLLAPSED) {
-            /*controlBlur(context)*/
             bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
         }
     }
@@ -114,28 +96,8 @@ class MvaLogoutComponent : CoordinatorLayout {
 
     }
 
-    private fun controlBlur(context: Context) {
-        //Normally version can be "Build.VERSION_CODES.JELLY_BEAN_MR1" but we apply "Build.VERSION_CODES.M" becouse of performans issues
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && blurTask != null) {
-            if (blurView != null) {
-                blurTask = BlurTask(context, blurView!!, onBlurListener)
-                blurTask!!.execute()
-            }
-        }
-    }
-
-    private var onBlurListener = object :
-        AsyncBlurListener {
-        override fun onLoad(bitmap: Bitmap?) {
-            if (bitmap != null) {
-                overlayBlurV.background = BitmapDrawable(context.resources, bitmap);
-            }
-        }
-    }
-
     private fun setOverlay(offset: Float) {
         overlayV.alpha = offset
-        overlayBlurV.alpha = offset
         bottomSheetIndicator.alpha = offset
         bottomSheetIndicator.visibility = View.VISIBLE
         if (offset == 0.0f) {
@@ -148,12 +110,8 @@ class MvaLogoutComponent : CoordinatorLayout {
 
     private fun showOverlay() {
         overlayV.visibility = View.VISIBLE
-        overlayBlurV.visibility = View.VISIBLE
         Handler().postDelayed({
             overlayV.setSafeOnClickListener {
-                dismiss()
-            }
-            overlayBlurV.setSafeOnClickListener {
                 dismiss()
             }
         }, 300)
@@ -161,9 +119,7 @@ class MvaLogoutComponent : CoordinatorLayout {
 
     private fun hideOverlay() {
         overlayV.setOnClickListener(null)
-        overlayBlurV.setOnClickListener(null)
         overlayV.visibility = View.GONE
-        overlayBlurV.visibility = View.GONE
     }
 
     public interface OnLogoutListener {

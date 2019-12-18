@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         //add response to component for create navigationbar and fragments
         trayNavComp.setFragmentManager(supportFragmentManager)
-        trayNavComp.initView(contentRL)
+        trayNavComp.initView()
 
         topSnackBtn.setSafeOnClickListener {
             mvaTopSnackbarComp.showSnack(
@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
-        mvaLogoutComp.setBlurView(contentRL)
         logoutBtn.setSafeOnClickListener {
             mvaLogoutComp.show(object : MvaLogoutComponent.OnLogoutListener {
                 override fun onLogout() {

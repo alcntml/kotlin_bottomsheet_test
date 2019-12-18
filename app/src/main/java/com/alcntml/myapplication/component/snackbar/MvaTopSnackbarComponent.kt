@@ -13,7 +13,6 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.isVisible
 import com.alcntml.myapplication.R
 import com.alcntml.myapplication.extention.setSafeOnClickListener
-import com.alcntml.myapplication.util.BlurUtil
 import kotlinx.android.synthetic.main.mva_top_snackbar_component.view.*
 import android.view.ViewGroup
 import java.lang.Exception
