@@ -31,6 +31,7 @@ public class MvaAlertDialog(
     private val negativeButton: String? = null,
     private val positiveButtonListener: OnDialogButtonClickListener? = null,
     private val negativeButtonListener: OnDialogButtonClickListener? = null,
+    private val cancelListener: DialogInterface.OnCancelListener? = null,
     private val cancelable: Boolean = true) {
 
     private var dialogView: Dialog? = null
@@ -65,18 +66,7 @@ public class MvaAlertDialog(
         overlayV = dialogView!!.findViewById<View>(R.id.overlayV)
         contentCV = dialogView!!.findViewById<CardView>(R.id.contentCV)
 
-        dialogView!!.setOnDismissListener{
-            startDismissAnimation()
-        }
-        dialogView!!.setOnKeyListener{ dialogInterface: DialogInterface, i: Int, keyEvent: KeyEvent ->
-            if (i == KeyEvent.KEYCODE_BACK && !backPressed) {
-                backPressed = true
-                dismiss()
-                return@setOnKeyListener true
-            }
-            return@setOnKeyListener false
-        }
-
+        setListener()
         setTitle()
         setMessage()
         setNegativeButton()
@@ -96,6 +86,22 @@ public class MvaAlertDialog(
 
     private fun dismiss(){
         startDismissAnimation()
+    }
+
+    private fun setListener(){
+        dialogView!!.setOnDismissListener{
+            startDismissAnimation()
+        }
+
+        dialogView!!.setOnKeyListener{ dialogInterface: DialogInterface, i: Int, keyEvent: KeyEvent ->
+            if (i == KeyEvent.KEYCODE_BACK && !backPressed) {
+                backPressed = true
+                dismiss()
+                cancelListener?.onCancel(dialogView)
+                return@setOnKeyListener true
+            }
+            return@setOnKeyListener false
+        }
     }
 
     private fun setTitle(){
@@ -151,6 +157,7 @@ public class MvaAlertDialog(
     private fun setOutside(){
         overlayV!!.setOnClickListener{
             dismiss()
+            cancelListener?.onCancel(dialogView)
         }
     }
 

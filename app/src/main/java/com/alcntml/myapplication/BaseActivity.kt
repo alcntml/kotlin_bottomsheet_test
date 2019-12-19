@@ -1,5 +1,6 @@
 package com.alcntml.myapplication
 
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -40,27 +41,31 @@ class BaseActivity : AppCompatActivity() {
             mvaLogoutComp.show(object : LogoutComponent.OnLogoutListener {
                 override fun onLogout() {
                     mvaLogoutComp.dismiss()
-                    Toast.makeText(this@BaseActivity,"Logged out!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@BaseActivity, "Logged out!", Toast.LENGTH_SHORT).show()
                 }
             })
         }
 
-        middlePopupBtn.setSafeOnClickListener{
-            MvaAlertDialog(context = this@BaseActivity
-                ,title = "Alican"
-                , message="Gülşah'ı çok seviyor!"
-                , positiveButton = "Tamam"
-                , negativeButton = "Daha çok sev"
-                , positiveButtonListener = object : MvaAlertDialog.OnDialogButtonClickListener {
+        middlePopupBtn.setSafeOnClickListener {
+            MvaAlertDialog(context = this@BaseActivity,
+                title = "Lorem ipsum dolor sit amet, consectetur",
+                message = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                positiveButton = "Regular, 18px",
+                negativeButton = "Regular, 18px",
+                positiveButtonListener = object : MvaAlertDialog.OnDialogButtonClickListener {
                     override fun onClick() {
-
+                        Toast.makeText(this@BaseActivity, "Positive", Toast.LENGTH_SHORT).show()
                     }
 
-                }, negativeButtonListener = object : MvaAlertDialog.OnDialogButtonClickListener {
+                },
+                negativeButtonListener = object : MvaAlertDialog.OnDialogButtonClickListener {
                     override fun onClick() {
-
+                        Toast.makeText(this@BaseActivity, "Negative", Toast.LENGTH_SHORT).show()
                     }
 
+                },
+                cancelListener = DialogInterface.OnCancelListener {
+                    Toast.makeText(this@BaseActivity, "Canceled", Toast.LENGTH_SHORT).show()
                 }).show()
         }
     }
