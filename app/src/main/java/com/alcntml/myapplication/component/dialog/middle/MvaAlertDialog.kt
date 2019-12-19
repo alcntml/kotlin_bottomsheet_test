@@ -1,4 +1,4 @@
-package com.alcntml.myapplication.component.dialog
+package com.alcntml.myapplication.component.dialog.middle
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -8,8 +8,6 @@ import android.app.Activity
 import android.app.Dialog
 import android.content.Context
 import android.content.DialogInterface
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Handler
 import android.view.KeyEvent
@@ -17,6 +15,7 @@ import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.OvershootInterpolator
 import android.widget.Button
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -170,8 +169,8 @@ public class MvaAlertDialog(
         val animatorOverlayAlpha = ObjectAnimator.ofFloat(overlayV, "alpha", 0f, 1f)
 
         val animationSet: AnimatorSet = AnimatorSet()
-        animationSet.duration = 300
-        animationSet.interpolator = AccelerateDecelerateInterpolator()
+        animationSet.duration = 1000
+        animationSet.interpolator = OvershootInterpolator()
         animationSet.setupEndValues()
         animationSet.addListener(object : AnimatorListenerAdapter() {
             override fun onAnimationEnd(animation: Animator?) {
@@ -183,13 +182,13 @@ public class MvaAlertDialog(
     }
 
     private fun startDismissAnimation(){
-        val animatorContentScaleX = ObjectAnimator.ofFloat(contentCV, "scaleX", 1f, 0f)
-        val animatorContentScaleY = ObjectAnimator.ofFloat(contentCV, "scaleY", 1f, 0f)
+        /*val animatorContentScaleX = ObjectAnimator.ofFloat(contentCV, "scaleX", 1f, 0f)
+        val animatorContentScaleY = ObjectAnimator.ofFloat(contentCV, "scaleY", 1f, 0f)*/
         val animatorContentAlpha = ObjectAnimator.ofFloat(contentCV, "alpha", 1f, 0f)
         val animatorOverlayAlpha = ObjectAnimator.ofFloat(overlayV, "alpha", 1f, 0f)
 
         val animationSet: AnimatorSet = AnimatorSet()
-        animationSet.duration = 200
+        animationSet.duration = 300
         animationSet.interpolator = AccelerateDecelerateInterpolator()
         animationSet.setupEndValues()
         animationSet.addListener(object : AnimatorListenerAdapter() {
@@ -199,7 +198,7 @@ public class MvaAlertDialog(
             }
         })
 
-        animationSet.playTogether(animatorContentScaleX,animatorContentScaleY,animatorContentAlpha,animatorOverlayAlpha)
+        animationSet.playTogether(animatorContentAlpha,animatorOverlayAlpha)
         animationSet.start()
     }
 

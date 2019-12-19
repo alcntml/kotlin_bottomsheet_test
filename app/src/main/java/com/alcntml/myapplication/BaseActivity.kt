@@ -4,9 +4,10 @@ import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.alcntml.myapplication.component.snackbar.BottomSnackbarComponent
 import com.alcntml.myapplication.component.LogoutComponent
-import com.alcntml.myapplication.component.dialog.MvaAlertDialog
+import com.alcntml.myapplication.component.dialog.middle.MvaAlertDialog
+import com.alcntml.myapplication.component.dialog.middle.alert
+import com.alcntml.myapplication.component.snackbar.BottomSnackbarComponent
 import com.alcntml.myapplication.component.snackbar.TopSnackbarComponent
 import com.alcntml.myapplication.extention.setSafeOnClickListener
 import kotlinx.android.synthetic.main.activity_base.*
@@ -47,7 +48,7 @@ class BaseActivity : AppCompatActivity() {
         }
 
         middlePopupBtn.setSafeOnClickListener {
-            MvaAlertDialog(context = this@BaseActivity,
+            alert(context = this@BaseActivity,
                 title = "Lorem ipsum dolor sit amet, consectetur",
                 message = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 positiveButton = "Regular, 18px",
@@ -66,7 +67,7 @@ class BaseActivity : AppCompatActivity() {
                 },
                 cancelListener = DialogInterface.OnCancelListener {
                     Toast.makeText(this@BaseActivity, "Canceled", Toast.LENGTH_SHORT).show()
-                }).show()
+                })
         }
     }
 }

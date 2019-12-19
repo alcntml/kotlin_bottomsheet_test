@@ -11,7 +11,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.alcntml.myapplication.R
 import com.alcntml.myapplication.extention.setSafeOnClickListener
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import kotlinx.android.synthetic.main.component_logut.view.*
+import kotlinx.android.synthetic.main.component_logout.view.*
 
 class LogoutComponent : CoordinatorLayout {
 
@@ -35,7 +35,7 @@ class LogoutComponent : CoordinatorLayout {
     }
 
     private fun init() {
-        LayoutInflater.from(context).inflate(R.layout.component_logut, this, true)
+        LayoutInflater.from(context).inflate(R.layout.component_logout, this, true)
         val params: CoordinatorLayout.LayoutParams = CoordinatorLayout.LayoutParams(
             CoordinatorLayout.LayoutParams.MATCH_PARENT,
             CoordinatorLayout.LayoutParams.WRAP_CONTENT
